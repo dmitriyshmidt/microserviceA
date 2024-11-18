@@ -1,12 +1,13 @@
 # microserviceA
+
 Recipe Recommendation Microservice
 Overview
-This microservice helps you get a list of the top 10 popular recipes using the Spoonacular API. It works by reading a request from a text file, fetching recipe data from the API, and then writing back the results to another text file. This way, the client program and microservice can communicate easily without needing a complicated setup.
+This microservice helps you get a list of the top 10 popular recipes using the Spoonacular API. It works by reading a request from a text file, fetching recipe data from the API, and then writing back the results to another text file.
 
 Setup
 First, make sure you have Python installed on your computer. You also need to install a couple of Python packages. To do this, open your terminal and type: pip install requests python-dotenv
-Next, create a file called .env in the same folder as your code. This file will store your Spoonacular API key safely. Here is what the .env file should look like: API_KEY=api_key_here
-To keep your API key secure, add .env to your .gitignore file so it doesn’t get uploaded to github
+Next, create a file called .env in the same folder as your code. This file will store your Spoonacular API key safely. The .env file should look like: API_KEY=api_key_here
+Add .env to your .gitignore file so it doesn’t get uploaded to github
 
 How It Works
 The microservice and the client program use two text files to communicate: request.txt and response.txt. The client program starts by writing "Get Top Recipes" in request.txt. The microservice reads this file, understands the request, and then uses the Spoonacular API to get the top 10 recipes.
@@ -27,6 +28,7 @@ The client program will send a request, and the microservice will respond with t
 
 Troubleshooting
 If something goes wrong:
-
 Make sure the .env file has the correct API key.
 Ensure that you installed the Python packages with pip install requests python-dotenv.
+
+![UML Sequence Diagram](./microserviceA.png)
